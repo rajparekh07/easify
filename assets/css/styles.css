@@ -1,0 +1,42 @@
+.head-title-text{
+	font-family: 'Roboto', sans-serif;
+	color: white;
+	 font-weight: 200;
+}
+.head-title-text > .head-title-e {
+	color: white;
+	transition: color 0.2s ease-out;
+}
+.head-title-text:hover > .head-title-e {
+	color: grey;
+}
+#head-links{
+	display:block;
+	color: red;
+	border-radius: 25px;
+	padding-right: 25px;
+	padding-left: 25px;
+	background-color: inherit;
+	transition: background-color 0.2s ease;
+}
+#head-links:hover{
+	display: block;
+	background-color: grey;
+}
+#head-links2{
+	display:block;
+	color: red;
+	border-radius: 25px;
+	padding-right: 25px;
+	padding-left: 25px;
+	background-color: inherit;
+	transition: background-color 0.2s ease;
+}
+#head-links2:hover{
+	display: block;
+	background-color: grey;
+}
+#head-container{
+	transition: all 0.4s ease;
+
+}

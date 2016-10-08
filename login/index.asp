@@ -1,0 +1,2 @@
+<% @language="vbscript" %>
+Response Hello
