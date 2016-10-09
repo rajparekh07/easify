@@ -1,5 +1,5 @@
 <!--Section footer start -->
-	 <nav class=" grey darken-2">
+	 <nav class=" grey darken-2" id="footer">
       <div class="">
         <div class="row" style="margin-bottom: 0px;">
           <div class="footer-links-division">

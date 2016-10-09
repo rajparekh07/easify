@@ -12,8 +12,8 @@
           </div>
           <div class="footer-copyright indigo darken-2" id="head-links-division">
             <div class="container " id="head-links-container">
-              <a class="left head-links" href="#!">Home </a>
-              <a class="left head-links" href="#!" >About </a>
+              <a class="left head-links" href="/">Home </a>
+              <a class="left head-links" href="/about" >About </a>
               <a class="right head-links z-depth-0" href="/register" id="head-login">Sign Up! </a>
               <a class="right head-links z-depth-0" href="/login" id="head-signup">Login </a>
               <!--If ASP statement @Todo

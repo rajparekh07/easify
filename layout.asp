@@ -17,9 +17,11 @@
     <% call contentsofhead %>
 </head>
 <body>
-
+<div id="content">
+        <div id="background-img"></div>
 <!-- #include file ="includes\Header.asp" -->
- 		<% call contentsofdoc %>
+        <% call contentsofdoc %>
 <!-- #include file ="includes\Footer.asp" -->
+</div>
 </body>
 </html>

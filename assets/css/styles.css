@@ -1,3 +1,4 @@
+
 /*
 *Header
 */
@@ -11,7 +12,10 @@
 	transition: 0.2s all ease-in-out;
 }
 .head-title-text:hover > .head-title-e {
-	color: #ffff00 ;
+	color: #ff4081 ;
+}
+#head-row{
+	margin-bottom: 0px;
 }
 .head-links{
 	display:block;
@@ -22,7 +26,10 @@
     font-size: 0.8em;
     font-weight: 800;
     text-transform: uppercase;
-	border-radius: 25px;
+	border-top-left-radius: 10px 25px;
+    border-top-right-radius: 10px 25px;
+    border-bottom-right-radius: 10px 25px;
+    border-bottom-left-radius: 10px 25px;
 	border: 10px;
 	padding-right: 1.5em;
 	padding-left: 1.5em;
@@ -32,7 +39,7 @@
 .head-links:hover{
 	display: block;
 	color: #424242;
-	background-color: #e0e0e0;
+	background-color: #c5cae9;
 }
 #head-container{
 	transition: all 0.4s ease;
@@ -42,10 +49,12 @@
 	color: #e0e0e0;
 }*/
 .head-links#head-login:hover{
-	background-color: #ffff00 ;
+	background-color: #ff4081 ;
+	color:white;
 }
 .head-links#head-signup:hover{
-	background-color: #ffff00 ;
+	background-color: #ff4081 ;
+	color: white;
 }
 #head-welcome{
 	border-radius: 0px;
@@ -69,4 +78,43 @@
 	    text-align: -webkit-match-parent;
 	        font-family: "Helvetica","Arial",sans-serif;
 	padding-left:25px;
+}
+#footer{
+	position: fixed;
+	bottom:0;
+}
+
+
+
+.focus-pink{
+	 box-shadow: 0 1px 0 0 pink;
+	 border-bottom: 1px solid pink;
+}
+.focus-pink:focus {
+  border-bottom: 1px solid pink;
+  box-shadow: 0 1px 0 0 pink;
+}
+
+.focus-pink:focus + label {
+  color: pink;
+}
+
+
+
+/**
+* Signup and login
+*/
+#login-container{
+	padding-top: 50px;
+}
+#register-container{
+	padding-top: 50px;
+}
+@media screen and (max-height: 700) {
+	#login-container{
+	padding-top: 20px;
+}
+#register-container{
+	padding-top: 20px;
+}
 }
