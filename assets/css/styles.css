@@ -1,42 +1,72 @@
+/*
+*Header
+*/
 .head-title-text{
 	font-family: 'Roboto', sans-serif;
-	color: white;
+	color: #e0e0e0;
 	 font-weight: 200;
 }
 .head-title-text > .head-title-e {
 	color: white;
-	transition: color 0.2s ease-out;
+	transition: 0.2s all ease-in-out;
 }
 .head-title-text:hover > .head-title-e {
-	color: grey;
+	color: #ffff00 ;
 }
-#head-links{
+.head-links{
 	display:block;
-	color: red;
+	color: #e0e0e0;
+	position: relative;
+    z-index: 2;
+    display: block;
+    font-size: 0.8em;
+    font-weight: 800;
+    text-transform: uppercase;
 	border-radius: 25px;
-	padding-right: 25px;
-	padding-left: 25px;
+	border: 10px;
+	padding-right: 1.5em;
+	padding-left: 1.5em;
 	background-color: inherit;
-	transition: background-color 0.2s ease;
+	transition: 0.2s all ease-in-out;
 }
-#head-links:hover{
+.head-links:hover{
 	display: block;
-	background-color: grey;
-}
-#head-links2{
-	display:block;
-	color: red;
-	border-radius: 25px;
-	padding-right: 25px;
-	padding-left: 25px;
-	background-color: inherit;
-	transition: background-color 0.2s ease;
-}
-#head-links2:hover{
-	display: block;
-	background-color: grey;
+	color: #424242;
+	background-color: #e0e0e0;
 }
 #head-container{
 	transition: all 0.4s ease;
 
+}
+/*.head-links#head-login{
+	color: #e0e0e0;
+}*/
+.head-links#head-login:hover{
+	background-color: #ffff00 ;
+}
+.head-links#head-signup:hover{
+	background-color: #ffff00 ;
+}
+#head-welcome{
+	border-radius: 0px;
+}
+/*
+*Header end
+*/
+
+/*
+*Footer start
+*/
+.footer-link-division{
+}
+.footer-link{
+	float: left;
+	font-size: 13px;
+	display: block;
+	color: black;
+	font-weight: 500;
+	padding-right:0px;
+	    text-align: -webkit-match-parent;
+	        font-family: "Helvetica","Arial",sans-serif;
+	padding-left:25px;
 }
