@@ -52,7 +52,7 @@
 							</div>
 							<div class="card-content">
 									<div class="row">
-										<form name="loginForm" id="loginForm" action="login.asp" method="POST">
+										<form name="loginForm" id="loginForm">
 											<div class="input-field col s12 m12 l12">
 												<i class="material-icons prefix grey-text">email</i>
 													<input id="Email" type="text" name="Email" autocomplete="off">

@@ -163,3 +163,10 @@ body {
 #content{
 	min-height: 100vh;
 }
+/**
+* JQuery Validate style
+**/
+.errorMessage{
+	padding-left: 25px;
+	color: red;
+}

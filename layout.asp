@@ -1,6 +1,3 @@
-<!--#include virtual="/includes/JSON_2.0.4.asp"-->
-<!--#include virtual="/includes/JSON_UTIL_0.1.1.asp"-->
-<!--#include virtual="/database.asp"-->
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,6 +11,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <script type="text/javascript" src="../assets/js/jquery-3.1.0.min.js"></script>
     <script type="text/javascript" src="../assets/js/materialize.min.js"></script>
+       <!-- jQuery Validation-->
+    <script src="../assets/js/jquery.validate.min.js"></script>
+    <script src="../assets/js/additional-methods.min.js"></script>
+
     <% call contentsofhead %>
 </head>
 <body>
@@ -21,11 +22,28 @@
 <div id="content" class="valign-wrapper">
 <!-- #include file ="includes\Header.asp" -->
         <% call contentsofdoc %>
+
 <!-- #include file ="includes\Footer.asp" -->
 </div>
 
 </body>
+<% call contentsofbottom %>
 <script type="text/javascript">
     $(".button-collapse").sideNav();
+    jQuery.validator.setDefaults({
+            errorClass: 'errorMessage invalid',
+            validClass: "valid",
+            errorElement : 'div',
+            errorPlacement: function(error, element) {
+                var placement = $(element).data('error');
+                if (placement) {
+                    $(placement).append(error)
+                } else {
+                    error.insertAfter(element);
+                }
+                //Materialize.toast(error, 60000, 'rounded red white-text');
+            }
+        });
+
 </script>
 </html>
