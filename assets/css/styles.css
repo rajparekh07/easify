@@ -2,17 +2,23 @@
 /*
 *Header
 */
-.head-title-text{
+#header{
+	position: fixed;
+	top:0;
+	min-height: 36px;
+}
+.brand-logo{
 	font-family: 'Roboto', sans-serif;
 	color: #e0e0e0;
 	 font-weight: 200;
+	 font-size: 0.8em;
 }
-.head-title-text > .head-title-e {
+.brand-logo > .head-title-e {
 	color: white;
 	transition: 0.2s all ease-in-out;
 }
-.head-title-text:hover > .head-title-e {
-	color: #ff4081 ;
+.brand-logo:hover > .head-title-e {
+	color: teal ;
 }
 #head-row{
 	margin-bottom: 0px;
@@ -26,10 +32,10 @@
     font-size: 0.8em;
     font-weight: 800;
     text-transform: uppercase;
-	border-top-left-radius: 10px 25px;
+/*	border-top-left-radius: 10px 25px;
     border-top-right-radius: 10px 25px;
     border-bottom-right-radius: 10px 25px;
-    border-bottom-left-radius: 10px 25px;
+    border-bottom-left-radius: 10px 25px;*/
 	border: 10px;
 	padding-right: 1.5em;
 	padding-left: 1.5em;
@@ -38,8 +44,34 @@
 }
 .head-links:hover{
 	display: block;
-	color: #424242;
-	background-color: #c5cae9;
+	color: white;
+	/*background-color: #c5cae9;*/
+	background-color: teal;
+}
+.head-links-mobile{
+	display:block;
+	color: #e0e0e0;
+	position: relative;
+    z-index: 2;
+    display: block;
+    font-size: 0.8em;
+    font-weight: 800;
+    text-transform: uppercase;
+/*	border-top-left-radius: 10px 25px;
+    border-top-right-radius: 10px 25px;
+    border-bottom-right-radius: 10px 25px;
+    border-bottom-left-radius: 10px 25px;*/
+	border: 10px;
+	padding-right: 1.5em;
+	padding-left: 1.5em;
+	background-color: inherit;
+	transition: 0.2s all ease-in-out;
+}
+.head-links-mobile:hover{
+	display: block;
+	color: black;
+	/*background-color: #c5cae9;*/
+	background-color: teal;
 }
 #head-container{
 	transition: all 0.4s ease;
@@ -59,6 +91,7 @@
 #head-welcome{
 	border-radius: 0px;
 }
+
 /*
 *Header end
 */
@@ -75,17 +108,22 @@
 	color: black;
 	font-weight: 500;
 	padding-right:0px;
-	    text-align: -webkit-match-parent;
-	        font-family: "Helvetica","Arial",sans-serif;
+	text-align: -webkit-match-parent;
+	font-family: "Helvetica","Arial",sans-serif;
 	padding-left:25px;
 }
 #footer{
 	position: fixed;
 	bottom:0;
+	z-index: 3;
 }
 
 
 
+/*
+* Fixing colors for pink input field
+*/
+/*
 .focus-pink{
 	 box-shadow: 0 1px 0 0 pink;
 	 border-bottom: 1px solid pink;
@@ -98,23 +136,30 @@
 .focus-pink:focus + label {
   color: pink;
 }
-
-
-
-/**
-* Signup and login
 */
-#login-container{
-	padding-top: 50px;
+/**
+* Roboto font class
+**/
+.roboto-thin-text{
+	font-family: 'Roboto', sans-serif;
+	color: #e0e0e0;
+	 font-weight: 200;
 }
-#register-container{
-	padding-top: 50px;
-}
-@media screen and (max-height: 700) {
-	#login-container{
-	padding-top: 20px;
-}
-#register-container{
-	padding-top: 20px;
-}
+/**
+* Background Image
+**/
+body {  
+	background-image: url(../../cm.jpg);
+	background-attachment: fixed;
+	background-size: contain;
+	background-repeat: repeat-x repeat-y; 
+	background-position: fixed;
+	background-size: 33%;
+	min-height: 100vh;
+} 
+/**
+* Valign fix for cards
+**/
+#content{
+	min-height: 100vh;
 }

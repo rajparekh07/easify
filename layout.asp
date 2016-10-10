@@ -17,11 +17,15 @@
     <% call contentsofhead %>
 </head>
 <body>
-<div id="content">
-        <div id="background-img"></div>
+
+<div id="content" class="valign-wrapper">
 <!-- #include file ="includes\Header.asp" -->
         <% call contentsofdoc %>
 <!-- #include file ="includes\Footer.asp" -->
 </div>
+
 </body>
+<script type="text/javascript">
+    $(".button-collapse").sideNav();
+</script>
 </html>
