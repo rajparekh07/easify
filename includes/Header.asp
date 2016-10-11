@@ -34,6 +34,7 @@
         
         <% IF Session("LoggedIn")=True then %>
               <li class="head-links"><a>Welcome <%=Session("UserName") %>!</a></li>
+              <li><a href="/logout" class="head-links">Logout</a></li>
         <% Else %>
               <li><a href="/login" class="head-links">Login</a></li>
               <li class="head-links" ><a href="/register">Sign Up</a></li>      
@@ -42,9 +43,13 @@
     </div>
   </nav>
   <ul class="side-nav"  id="mobile-nav">
-        <li><a href="/" class="head-links-mobile">Home</a></li>
-        <li><a href="/login" class="head-links-mobile">Login</a></li>
-        <li><a href="/register" class="head-links-mobile">Sign Up</a></li>
+         <% IF Session("LoggedIn")=True then %>
+              <li class="head-links"><a>Welcome <%=Session("UserName") %>!</a></li>
+              <li><a href="/logout" class="head-links">Logout</a></li>
+        <% Else %>
+              <li><a href="/login" class="head-links">Login</a></li>
+              <li class="head-links" ><a href="/register">Sign Up</a></li>      
+        <% End IF %>
   </ul>
 
 <!--Section Header end -->

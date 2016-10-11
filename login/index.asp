@@ -80,5 +80,56 @@
  
  <% end sub %>
    <% sub contentsofbottom %>
- 
+   <script>
+  $("#loginForm").validate({
+            rules: {
+                email: {
+                    required: true,
+                    email: true,
+                    pattern: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
+                    maxlength: 64
+                },
+                password: {
+                    required: true,
+                    minlength: 6,
+                    maxlength: 32
+                }
+            }, 
+            messages: {
+                email: {
+                    required: "Enter your Email",
+                    email : "Invalid Email Address",
+                    pattern: "Sorry, this is not a valid Email!"
+                },
+                password: {
+                    required: "Enter your Password"
+                }
+            },
+           submitHandler: function(form){
+            	var data = $('#loginForm').serialize();
+            	$.ajax("login.asp",{
+            		method: 'post',
+            		data: data,
+            		success: function(data){
+            			data = JSON.parse(data);
+            			if(data.Success == "Success"){
+            				swal({
+            					title: "Success",
+            					text: "Welcome back to Easify!",
+            					type: "success"
+            				},function() {
+            					window.location.href = '/';
+            				});
+            			} else {
+            				swal({
+            					title: "Failed",
+            					text: "Sorry! We cannot log in you because " + data.Authenticate,
+            					type: "error"
+            				});
+            			}
+            		}
+            	});
+            }
+        });
+    </script>
  <% end sub %>

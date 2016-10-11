@@ -2,9 +2,9 @@
 <!--#include virtual="/includes/JSON_UTIL_0.1.1.asp"-->
 <!--#include virtual="/database.asp"-->
 <% 
-dim email: email=request.Form("email")
+dim email: email=LCase(Trim(request.Form("email")))
 dim password: password=request.Form("password")
-dim name: name=request.Form("name")'
+dim name: name=request.Form("name")
 dim responseJson
 dim rulesArray: rulesArray = Array(Array("email","Not a valid email or Email already exists"),Array("name","Not a valid password"),Array("password","Not a valid password"))
 dim validationResult : set validationResult = validate(rulesArray)
