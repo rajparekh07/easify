@@ -30,7 +30,6 @@ function validate(arr)
 	set rs = conn.execute("select count(*) as `count` from users where `Email` ='"&email&"' and `Password` = '"&password&"'")
 	if rs.fields("count") = 0 then
 		test = false
-		return("count") = "select count(*) as `count` from users where `Email` ='"&email&"' and `Password` = '"&password&"'"
 		return(arr(0)(0)) = arr(0)(1)
 	 	return("Success") = "failed"
 	else 

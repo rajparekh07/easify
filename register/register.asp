@@ -1,5 +1,6 @@
 <!--#include virtual="/includes/JSON_2.0.4.asp"-->
 <!--#include virtual="/includes/JSON_UTIL_0.1.1.asp"-->
+<!--#include virtual="/includes/redirectIFAuthenticated.asp"-->
 <!--#include virtual="/database.asp"-->
 <% 
 dim email: email=LCase(Trim(request.Form("email")))
@@ -39,7 +40,7 @@ function validate(arr)
 				set conn = newConnection()
 				if not len(email)=0 then
 					set rs = conn.execute("select count(*) as `count` from users where Email in ('"&email&"')")
-					if not rs.fields("count") = "0" then
+					if not rs.fields("count") = 0 then
 						test = false
 						Alltest = false
 					end if

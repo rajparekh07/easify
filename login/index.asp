@@ -56,12 +56,12 @@
 										<form name="loginForm" id="loginForm">
 											<div class="input-field col s12 m12 l12">
 												<i class="material-icons prefix grey-text">email</i>
-													<input id="Email" type="text" name="Email" autocomplete="off">
-													<label for="Email">Email</label>
+													<input id="email" type="text" name="email" autocomplete="off" class="validate"> 
+													<label for="email">Email</label>
 										</div>
 											<div class="input-field col s12 m12 l12">
 												<i class="material-icons prefix grey-text roboto-thin-text">fingerprint </i>
-													<input id="password" type="password" name="password" autocomplete="off">
+													<input id="password" type="password" name="password" autocomplete="off" class="validate">
 													<label for="password">Password</label>
 										</div>
 										<div class="input-field col offset-l6 l6 s12 m12">

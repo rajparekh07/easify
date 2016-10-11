@@ -300,3 +300,35 @@ body {
      * -------------------------------------------------------------------
      */
 
+/* Class for placement of error messages for jQuery Validate */
+.errorMessage {
+     font-size: 18px;
+}
+.errorMessage i,
+.errorMessage [class^="mdi-"], .breadcrumb [class*="mdi-"],
+.errorMessage i.material-icons {
+    display: inline-block;
+    float: left;
+    font-size: 24px;
+}
+.errorMessage:before {
+    content: '\E5CC';
+    color: rgba(255, 255, 255, 0.7);
+    vertical-align: top;
+    display: inline-block;
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 25px;
+    margin: 0 10px 0 8px;
+    -webkit-font-smoothing: antialiased;
+}
+.errorMessage:first-child:before {
+    display: none;
+}
+
+
+.invalid {
+	color: red;
+	font-size: 1em;
+}

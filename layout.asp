@@ -39,7 +39,7 @@
 </div>
 
 </body>
-<% call contentsofbottom %>
+
 <script type="text/javascript">
     $(".button-collapse").sideNav();
     jQuery.validator.setDefaults({
@@ -77,4 +77,5 @@
 
 
 </script>
+<% call contentsofbottom %>
 </html>
