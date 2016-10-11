@@ -1,8 +1,8 @@
 <!--#include virtual="/layout.asp"-->
 <% sub contentsofdoc %>
-		<div class="row valign" id="register-container-row">
+		<div class="row valign" id="register-container-row" style="z-index: -1;padding-top:50px;">
 			<div class="col s12 m12 l6 offset-l3 valign" id="register-col">
-				<div class="card hoverable" id="register-center">	
+				<div class="card hoverable" id="register-center" >	
 					<div class="card-content teal" id="register-card">
 						<div class="row " id="content-row">
 							<div class="col s12 m12 l12 ">
@@ -34,7 +34,7 @@
 												<label for="confirmPassword">Confirm Password</label>
 									</div>	
 									<div class="input-field col offset-l6 l6 s12 m12">
-									<button class="btn waves-effect waves-light teal white-text" type="submit" name="action">Register
+									<button class="btn waves-effect waves-light teal white-text" id="register-btn" type="submit" name="action">Register
 											  <i class="material-icons right">send</i>
 									  </button>
 									</div>
@@ -102,7 +102,18 @@
             	$('.toast').remove();
             	if($('#password').val()!=($('#confirmPassword').val())){
             		Materialize.toast('Your password does not match', 10000, 'rounded red white-text');
+            		return null;
             	}
+            	data = $('#registerForm').serialize();
+            	$.ajax("/register.asp",{
+            		method: post,
+            		data: data,
+            		success: function(data){
+            			if(data.success == "success"){
+            				
+            			}
+            		}
+            	});
             }
         });
  </script>

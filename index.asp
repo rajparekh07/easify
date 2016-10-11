@@ -5,3 +5,6 @@
  <% sub contentsofhead %>
  
  <% end sub %>
+  <% sub contentsofbottom %>
+ 
+ <% end sub %>

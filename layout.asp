@@ -18,6 +18,16 @@
     <% call contentsofhead %>
 </head>
 <body>
+  <div id="preloader" class="cs-loader">
+        <div id="loader" class="cs-loader-inner">
+            <label> E</label>
+            <label> A</label>
+            <label> S</label>
+            <label> I</label>
+            <label> F</label>
+            <label> Y</label>
+        </div>
+    </div>
 
 <div id="content" class="valign-wrapper">
 <!-- #include file ="includes\Header.asp" -->
@@ -44,6 +54,25 @@
                 //Materialize.toast(error, 60000, 'rounded red white-text');
             }
         });
+    /*---------------------------------------------------- */
+    /* Preloader
+     ------------------------------------------------------ */
+    $(window).on('load', function() {
+
+        $(document).ready(function() {
+            setTimeout(function(){
+                var l = document.getElementById('loader').style;
+            l.opacity = 1;
+            (function fade(){(l.opacity-=.1)<0?l.display="none":setTimeout(fade, 50)})();
+
+            var p = document.getElementById('preloader').style;
+            p.opacity = 1;
+            (function fade(){(p.opacity-=.1)<0?p.display="none":setTimeout(fade, 50)})();
+            },2000);
+        });
+
+    });
+
 
 </script>
 </html>
