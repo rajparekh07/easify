@@ -15,11 +15,17 @@ else
 	dim conn : set conn = newConnection()
 	dim rs : set rs = conn.execute("insert into users(`FullName`,`Email`,`Password`,`CreatedAt`) values ('"&name&"','"&email&"','"&password&"','"&NOW()&"')")
 	set responseJson = jsObject()
-	responseJson("Success")=true
+	responseJson("Success")= "success"
 	responseJson("Message")= "User logged in at " & NOW()
 	Session("LoggedIn") = true
 	Session("Time") = NOW()
-	
+	conn.close
+	set rs = nothing
+	set conn = nothing
+	set conn = newConnection()
+	set rs = conn.execute("select ID,FullName from users where email='"&email&"'")
+	Session("UserID") =  rs("ID")
+	Session("UserName") = rs("FullName")
 end if
 	responseJson.Flush
 function validate(arr)

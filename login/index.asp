@@ -1,4 +1,5 @@
 <!--#include virtual="/layout.asp"-->
+<!--#include virtual="/includes/redirectIFAuthenticated.asp"-->
 <% sub contentsofdoc %>
 <!-- <div class="val">
 	<div class="container" id="login-container" style="">

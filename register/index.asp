@@ -1,6 +1,7 @@
 <!--#include virtual="/layout.asp"-->
+<!--#include virtual="/includes/redirectIFAuthenticated.asp"-->
 <% sub contentsofdoc %>
-		<div class="row valign" id="register-container-row" style="z-index: -1;padding-top:50px;">
+		<div class="row valign" id="register-container-row" style="padding-top:50px;">
 			<div class="col s12 m12 l6 offset-l3 valign" id="register-col">
 				<div class="card hoverable" id="register-center" >	
 					<div class="card-content teal" id="register-card">
@@ -47,7 +48,8 @@
  <% end sub %>
  <% sub contentsofhead %>
  <% end sub %>
- <script>
+  <% sub contentsofbottom %>
+   <script>
 	$(window).on("load",function(){
 		if($(window).width()<1025){
 		  $("#register-col").removeClass("l6");
@@ -98,24 +100,37 @@
                 	required: "Enter your Password again!"
                 }
             },
-            submitHandler: function(form){
+           submitHandler: function(form){
             	$('.toast').remove();
             	if($('#password').val()!=($('#confirmPassword').val())){
             		Materialize.toast('Your password does not match', 10000, 'rounded red white-text');
-            		return null;
+            		return;
             	}
-            	data = $('#registerForm').serialize();
-            	$.ajax("/register.asp",{
-            		method: post,
+            	var data = $('#registerForm').serialize();
+            	$.ajax("register.asp",{
+            		method: 'post',
             		data: data,
             		success: function(data){
-            			if(data.success == "success"){
-            				
+            			data = JSON.parse(data);
+            			console.log(data.success);
+            			if(data.Success == "success"){
+            				swal({
+            					title: "Success",
+            					text: "Welcome to Easify! Your registration is complete!",
+            					type: "success"
+            				},function() {
+            					window.location.href = '/';
+            				});
+            			} else {
+            				swal({
+            					title: "Failed",
+            					text: "Sorry! We cannot register you because " + data.email,
+            					type: "error"
+            				});
             			}
             		}
             	});
             }
         });
  </script>
-  <% sub contentsofbottom %>
  <% end sub %>

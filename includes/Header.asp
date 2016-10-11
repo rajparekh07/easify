@@ -31,10 +31,14 @@
       <a href="#" data-activates="mobile-nav" class="button-collapse"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
         <li><a href="/" class="head-links">Home</a></li>
-        <li><a href="/login" class="head-links">Login</a></li>
-        <li class="head-links" ><a href="/register">Sign Up</a></li>
-      </ul>
-     
+        
+        <% IF Session("LoggedIn")=True then %>
+              <li class="head-links"><a>Welcome <%=Session("UserName") %>!</a></li>
+        <% Else %>
+              <li><a href="/login" class="head-links">Login</a></li>
+              <li class="head-links" ><a href="/register">Sign Up</a></li>      
+        <% End IF %>
+        </ul>
     </div>
   </nav>
   <ul class="side-nav"  id="mobile-nav">

@@ -14,7 +14,8 @@
        <!-- jQuery Validation-->
     <script src="../assets/js/jquery.validate.min.js"></script>
     <script src="../assets/js/additional-methods.min.js"></script>
-
+    <script src="../assets/js/sweetalert.min.js"></script> 
+    <link rel="stylesheet" type="text/css" href="../assets/css/sweetalert.css">
     <% call contentsofhead %>
 </head>
 <body>
