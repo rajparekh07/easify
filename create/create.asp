@@ -3,20 +3,20 @@
 <!--#include virtual="/database.asp"-->
 <!--#include virtual="/includes/verifyAuthentication.asp"-->
 <% 
-dim title: title=request("title")
-dim content: content=request("content")
+dim title: title=request.Form("title")
+dim post: post=request.Form("post")
 dim tags: tags=LCase(Trim(request("tags")))
 dim authorID: authorID=Session("UserID")
 dim updateAT: updateAT=NOW()
 dim createAT: createAT=NOW()
 dim responseJson: set responseJson = jsObject()
 dim test: test=true
-if len(title)<1 then
+if len(title)<4 then
 	test = false
 	responseJson("Title") = "Title is too short"
-else if len(content)<1 then
+else if len(post)<12 then
 	test = false
-	responseJson("Content") = "Content is too short"
+	responseJson("post") = "post is too short"
 end if
 if test=true then
 	dim conn: set conn = newConnection()
@@ -24,7 +24,7 @@ if test=true then
 	rs.open "posts",conn,0,3,2
 	rs.addNew
 	rs("Title") = title
-	rs("Content") = content
+	rs("Content") = post
 	rs("AuthorID") = authorID
 	rs("UpdatedAT") = updateAT
 	rs("CreatedAT") = createAT
@@ -35,8 +35,8 @@ if test=true then
 	dim tagID
 	if not instr(tags,",") = 0 then
 		for each tag in split(tags,", ")
-			set rs = conn.execute("select count(*) as `count` from tags where `TagName`='"&tags&"'")
-			if rs("count") = 0 then
+			set rs = conn.execute("select count(*) as `count` from tags where `TagName`='"&tag&"'")
+			if rs("count") = "0" then
 				rs.close
 				rs.open "tags",conn,0,3,2
 				rs.addNew
@@ -48,7 +48,7 @@ if test=true then
 				rs.close
 			else 
 				rs.close
-				set rs = conn.execute("select `ID` from tags where `TagName`='"&tags&"'")
+				set rs = conn.execute("select `ID` from tags where `TagName`='"&tag&"'")
 				rs.movefirst
 				tagID = rs("ID")
 				rs.close
@@ -78,7 +78,7 @@ if test=true then
 				set rs = conn.execute("insert into `post_tag`(`PostID`,`TagID`) values('"&postID&"','"&tagID&"')")
 	end if
 	responseJson("Success") = "Success"
-	responseJson("Message") = "A new post added at "& NOW()
+	responseJson("Message") = "A new post added at "& createAT
 	else
 	responseJson("Success") = "Failed"
 end if
