@@ -97,13 +97,15 @@
  		rules:{
  			comment:{
  				required: true,
+ 				pattern: /^((?!<script>).)*$/
  			}
  		},
  		message:{
+ 			pattern: "Nerds are not allowed here",
  			required: "Please enter the comment",
  		},
  		submitHandler: function(form) {
- 			var data = $('#newCommentForm').serialize();
+ 			var data = ($('#newCommentForm').serialize());
  			console.log()
  			$.ajax("newcomment.asp",{
  				method: 'post',

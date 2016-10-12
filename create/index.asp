@@ -72,14 +72,17 @@
 	    placeholder: 'Enter a tag',
 	    secondaryPlaceholder: '+Tag',
 	});
-	$('#title').keyup(function () {
+	$('#title').keyup(function () {	
 		var textEntered = $('#title').val();
 		$('#preview-title').text(textEntered);
 		if($('#title').val()=="") $('#preview-title').text('Some Title');
 	});
 	$('#post').keyup(function () {
-		$('#preview-post').html($('#post').val());
-		if($('#post').val()=="") $('#preview-post').text('Some dummy text!');
+		var postContent = $('#post').val();
+			postContent = postContent.replace("script","")
+			$('#preview-post').html(postContent);
+			if($('#post').val()=="") $('#preview-post').text('Some dummy text!');
+	
 	});
 	 $('.chips').on('chip.add', function(e, chip){
 	 	if($('#preview-tags').text()!="")
@@ -100,7 +103,7 @@
  	 		post:{
  	 			required: true,
  	 			minlength: 12,
- 	 			
+ 	 			pattern: /^((?!\<scrip).)*$/,
  	 			maxlength: 4096
  	 		},
  	 	},
@@ -114,6 +117,7 @@
  	 			required: "Please enter the content of your post.",
  	 			minlength: "Your content for the post is too short.",
  	 			maxlength: "Your content for the post is too long.",
+ 	 			pattern: "Nerds are not allowed here",
  	 		},
  	 	},
  	 	submitHandler: function(form){
