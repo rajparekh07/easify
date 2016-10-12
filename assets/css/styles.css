@@ -113,6 +113,17 @@
 	font-family: "Helvetica","Arial",sans-serif;
 	padding-left:25px;
 }
+.footer-link-right{
+    float: left;
+    font-size: 13px;
+    display: block;
+    color: black;
+    font-weight: 500;
+    padding-left:25px;
+    text-align: -webkit-match-parent;
+    font-family: "Helvetica","Arial",sans-serif;
+    padding-right:25px;
+}
 #footer{
 	position: fixed;
 	bottom:0;

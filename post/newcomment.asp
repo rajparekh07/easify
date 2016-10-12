@@ -3,8 +3,8 @@
 <!--#include virtual="/database.asp"-->
 <!--#include virtual="/includes/verifyAuthentication.asp"-->
 <%
-dim postID: postID = request("postID")
-dim comment: comment = request("comment")
+dim postID: postID = request.Form("postID")
+dim comment: comment = request.Form("comment")
 dim AuthorID: AuthorID = Session("UserID")
 dim rows: set rows = queryToJson(newConnection(),"select ID from posts where ID = "&postID&"")
 dim responseJson: set responseJson = jsObject()

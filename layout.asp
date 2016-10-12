@@ -36,10 +36,9 @@
         <% call contentsofdoc %>
 
 <!-- #include file ="includes\Footer.asp" -->
+
 </div>
-
 </body>
-
 <script type="text/javascript">
     $(".button-collapse").sideNav();
     jQuery.validator.setDefaults({
@@ -78,4 +77,5 @@
 
 </script>
 <% call contentsofbottom %>
+
 </html>

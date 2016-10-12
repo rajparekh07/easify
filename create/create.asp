@@ -5,7 +5,7 @@
 <% 
 dim title: title=request.Form("title")
 dim post: post=request.Form("post")
-dim tags: tags=LCase(Trim(request("tags")))
+dim tags: tags=LCase(Trim(request.Form("tags")))
 dim authorID: authorID=Session("UserID")
 dim updateAT: updateAT=NOW()
 dim createAT: createAT=NOW()
