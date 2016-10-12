@@ -11,9 +11,11 @@
 		dim rs2 : set rs2 = newConnection().execute("SELECT tags.* FROM tags where tags.ID in (Select TagID from post_tag where post_tag.PostID = "&rs("posts.ID")&")")
 		%>
 			<div class="col s12 m12 l12" >
-				<div class="card hoverable" id="<%=rs("posts.ID")%>">
+				<div class="card hoverable data-card" id="<%=rs("posts.ID")%>">
 					<div class="card-content">
-						<p class="roboto-thin-text">By <%=rs("FullName")%>, at <%=rs("CreatedAt")%></p>
+						<!-- <p class="roboto-thin-text">By <%=rs("FullName")%>, at <%=rs("CreatedAt")%></p> -->
+						<span class="new badge left-align roboto-thin-text" data-badge-caption="By <%=rs("FullName")%>, at <%=rs("CreatedAt")%>"></span>
+						<br>
 						<span class="card-title large" class="first-title"><%=rs("Title")%></span>
 						<p style="font-size: 20px;padding-left: 25px;height: 10vh" class="truncate">
 							<%=rs("Content")%>
@@ -29,7 +31,7 @@
 				</div>	
 			</div>
 			
-	</script>
+	
 		<% 	
 			count = count + 1
 			rs.movenext
@@ -48,7 +50,7 @@
 <script type="text/javascript">
 			$(document).ready(function(){
 			 	$('.card').click(function(){
-			 		window.location.href = "/post/post.asp?postID="+this.id;
+			 		window.location.href = "/post/?postID="+this.id;
 			 	});
 			});
  </script>

@@ -70,7 +70,7 @@
             var p = document.getElementById('preloader').style;
             p.opacity = 1;
             (function fade(){(p.opacity-=.1)<0?p.display="none":setTimeout(fade, 50)})();
-            },2000);
+            },200);
         });
 
     });

@@ -122,14 +122,9 @@
             					window.location.href = '/';
             				});
             			} else {
-                            var message = " ";
-                            if(data.Title!=undefined)
-                                message = data.Title;
-                            if(data.Content!=undefined)
-                                message = message + data.Content;
             				swal({
             					title: "Failed",
-            					text: "Sorry! We cannot create your post because " + ,
+            					text: "Sorry! We cannot register you because " + data.email,
             					type: "error"
             				});
             			}

@@ -53,7 +53,7 @@
 					<div class="card-content">
 						<p class="roboto-thin-text">By <%=Session("UserName")%>, at <%=NOW()%></p>
 						<span class="card-title large" id="preview-title">Some Title</span>
-						<p style="font-size: 20px;padding-left: 25px;min-height: 30vh;min-width: 30vh" id="preview-post">
+						<p style="font-size: 20px;padding-left: 25px;min-height: 30vh;min-width: 30vh" id="preview-post" class="data-card">
 						Some dummy text!
 						</p>
 						<p id="preview-tags-post">Tags: <span id="preview-tags"></span></p>
@@ -133,6 +133,8 @@
  	 							title: "New Post Created",
             					text: "Congratulations! Your post was added!",
             					type: "success"
+ 	 						},function () {
+ 	 							window.location.href = "../post/?postID="+data.PostID;
  	 						});
  	 					}else{
  	 						var message = " ";

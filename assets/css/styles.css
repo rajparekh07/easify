@@ -341,3 +341,9 @@ body {
    bottom: 45px; right: 24px;
     z-index: 999999;
 }
+
+
+.data-card{
+    transition: all 0.2s ease-in-out;
+    word-break: break-all;
+}

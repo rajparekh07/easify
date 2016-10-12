@@ -79,6 +79,7 @@ if test=true then
 	end if
 	responseJson("Success") = "Success"
 	responseJson("Message") = "A new post added at "& createAT
+	responseJson("PostID") = postID
 	else
 	responseJson("Success") = "Failed"
 end if
