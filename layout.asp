@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
  <!--- Custom Css -->
     <link rel="stylesheet" href="../assets/css/styles.css">
     <!-- Awesome Fonts CSS -->
@@ -8,7 +9,6 @@
     <!-- MATERIALIZE CSS-->
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="../assets/css/materialize.min.css"  media="screen,projection"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <script type="text/javascript" src="../assets/js/jquery-3.1.0.min.js"></script>
     <script type="text/javascript" src="../assets/js/materialize.min.js"></script>
        <!-- jQuery Validation-->
@@ -69,7 +69,7 @@
             var p = document.getElementById('preloader').style;
             p.opacity = 1;
             (function fade(){(p.opacity-=.1)<0?p.display="none":setTimeout(fade, 50)})();
-            },200);
+            },900);
         });
 
     });

@@ -17,11 +17,15 @@
 					<div class="card-content">
 						<!-- <p class="roboto-thin-text">By <%=rs("FullName")%>, at <%=rs("CreatedAt")%></p> -->
 						<span class="new badge left-align roboto-thin-text" data-badge-caption="By <%=rs("FullName")%>, at <%=rs("CreatedAt")%>"></span>
-						<span class="card-title large" class="first-title"><%=rs("Title")%></span>
+						<br>
+						<span class="card-title large" class="post-title"><%=rs("Title")%></span>
 						<p style="font-size: 20px;padding-left: 25px;min-height: 50vh" class="data-card">
 							<%=rs("Content")%>
 						</p>
-						<p class="first-tags-post">Tags: <span class="first-tags">
+						
+						<div class="row">
+							<div class="col l11 s10 m11">
+								<p class="post-tags">Tags: <span class="post-tags">
 							<% while not rs2.eof
 								response.write " "&rs2("TagName")
 							 	rs2.movenext
@@ -29,6 +33,19 @@
 							 	rs2.close
 							 %>
 						</span></p>
+						<p class="post-likes">Liked by <span id="like-count">12</span><span id="like-count-new" style="display:none">13</span> users <span class="post-likes">
+							<% 'while not rs2.eof
+								'response.write " "&rs2("TagName")
+							 	'rs2.movenext
+							 	'wend
+							 	'rs2.close
+							 %>
+						</span></p>
+							</div>
+							<div class="col l1 s1 m1">
+								<button id="like" type="submit" name="action" class="btn-floating btn-large waves-effect waves-light white"><i class="material-icons black-text">thumb_up</i></button>
+							</div>
+						</div>
 					</div>
 					<div class="divider"></div>
 					<div class="card-content">
@@ -45,19 +62,21 @@
 								<div class="col l1">
 									<a href="/create" class="btn-floating btn-small waves-effect waves-light red"><i class="material-icons">add</i></a>
 								</div> -->
+								 <% IF Session("LoggedIn")=True then %>
 							<form name="newCommentForm" id="newCommentForm" method="post">
-								<div class="input-field col s11 l11 m11">
+								<div class="input-field col s10 l11 m11">
 									<i class="material-icons prefix grey-text">comment</i>
 									<input type="text" name="comment" id="comment" autocomplete="off" class="validate">
 									<label for="comment">Comment</label>
 									<input type="hidden" id="postID" name="postID" value="<%=rs("posts.ID")%>">
 
 								</div>
-								<div class="col l1 s1 m1">
+								<div class="col l1 s2 m1">
 									<button type="submit" name="action" class="btn-floating btn-large waves-effect waves-light teal"><i class="material-icons">send</i></button>
 								</div>
 								</div>
 							</form>
+							<% end if %>
 							<ul class="collection">
 						    <% 
 						    	rs.close
@@ -67,7 +86,7 @@
 						    <li class="collection-item avatar">
 						      <i class="material-icons circle">&#xE853;</i>
 			
-						      <span class="title"><%=rs("FullName")%></span>
+						      <span class="title teal-text" ><%=rs("FullName")%></span>
 						      <p><%=rs("Content")%><br>
 						    	</p>
 						      <span class="new badge" data-badge-caption="<%=rs("comments.CreatedAt")%>"></span>
@@ -93,6 +112,13 @@
  <% end sub %>
   <% sub contentsofbottom %>
  <script>
+ 	$('#like').click(function(){
+ 			$(this).toggleClass("blue");
+ 			$(this).toggleClass("white");
+ 			$(this).find("i").toggleClass("white-text");
+ 			$('#like-count').toggle();
+ 			$('#like-count-new').toggle();
+ 		});
  	$('#newCommentForm').validate({
  		rules:{
  			comment:{

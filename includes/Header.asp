@@ -30,14 +30,14 @@
       <a href="/" class="brand-logo center"><span class="head-title-e">E</span>asify</a>
       <a href="#" data-activates="mobile-nav" class="button-collapse"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
-        <li><a href="/" class="head-links">Home</a></li>
+        <li ><a href="/" class="head-links">Home</a></li>
         
         <% IF Session("LoggedIn")=True then %>
               <li class="head-links"><a>Welcome <%=Session("UserName") %>!</a></li>
-              <li><a href="/logout" class="head-links">Logout</a></li>
+              <li class="head-links"><a href="/logout" >Logout</a></li>
         <% Else %>
               <li><a href="/login" class="head-links">Login</a></li>
-              <li class="head-links" ><a href="/register">Sign Up</a></li>      
+              <li ><a href="/register" class="head-links" >Sign Up</a></li>      
         <% End IF %>
         </ul>
     </div>
@@ -45,9 +45,9 @@
   <ul class="side-nav"  id="mobile-nav">
          <% IF Session("LoggedIn")=True then %>
               <li class="head-links"><a>Welcome <%=Session("UserName") %>!</a></li>
-              <li><a href="/logout" class="head-links">Logout</a></li>
+              <li class="head-links"><a href="/logout" >Logout</a></li>
         <% Else %>
-              <li><a href="/login" class="head-links">Login</a></li>
+              <li class="head-links"><a href="/login" >Login</a></li>
               <li class="head-links" ><a href="/register">Sign Up</a></li>      
         <% End IF %>
   </ul>

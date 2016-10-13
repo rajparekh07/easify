@@ -24,7 +24,7 @@
 					            <label for="textarea1">Textarea</label>
 					          </div> -->
 								<div class="input-field col s12 l12 m12">
-									<i class="material-icons prefix grey-text">content_paste</i>
+								<i class="material-icons prefix grey-text">content_paste</i>
 									<textarea name="post" id="post" autocomplete="off" length="4096" class="materialize-textarea" rows="2" ></textarea>
 									<label for="post">Post Content</label>
 								</div>
@@ -51,7 +51,9 @@
 						</h5>
 					</div>
 					<div class="card-content">
-						<p class="roboto-thin-text">By <%=Session("UserName")%>, at <%=NOW()%></p>
+						<!-- <p class="roboto-thin-text">By <%=Session("UserName")%>, at <%=NOW()%></p> -->
+						<span class="new badge left-align roboto-thin-text" data-badge-caption="By <%=Session("UserName")%>, at <%=NOW()%>"></span>
+						<br>
 						<span class="card-title large" id="preview-title">Some Title</span>
 						<p style="font-size: 20px;padding-left: 25px;min-height: 30vh;min-width: 30vh" id="preview-post" class="data-card">
 						Some dummy text!
@@ -65,6 +67,7 @@
 	</div>
  <% end sub %>
  <% sub contentsofhead %>
+
  <% end sub %>
  <% sub contentsofbottom %>
  	<script type="text/javascript">
@@ -98,12 +101,11 @@
  	 		title:{
  	 			required: true,
  	 			minlength: 4,
- 	 			maxlength: 16
+ 	 			maxlength: 32
  	 		},
  	 		post:{
  	 			required: true,
  	 			minlength: 12,
- 	 			pattern: /^((?!\<scrip).)*$/,
  	 			maxlength: 4096
  	 		},
  	 	},

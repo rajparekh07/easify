@@ -356,5 +356,5 @@ body {
 
 .data-card{
     transition: all 0.2s ease-in-out;
-    word-break: break-all;
+    word-break: keep-all;
 }
