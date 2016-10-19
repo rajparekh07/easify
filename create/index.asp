@@ -146,8 +146,8 @@
  	 						var message = " ";
                             if(data.Title!=undefined)
                                 message = data.Title;
-                            if(data.Content!=undefined)
-                                message = message + data.Content;
+                            if(data.post!=undefined)
+                                message = message + data.post;
             				swal({
             					title: "Failed",
             					text: "Sorry! We cannot create your post because " + message,

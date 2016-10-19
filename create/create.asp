@@ -4,19 +4,19 @@
 <!--#include virtual="/includes/verifyAuthentication.asp"-->
 <% 
 dim title: title=request.Form("title")
-dim post: post=request.Form("post")
-dim tags: tags=LCase(Trim(request.Form("tags")))
+dim post: post=Replace(Replace(request.Form("post"),"<","&lt;"),">","&gt;")
+dim tags: tags=LCase(Trim(Replace(Replace(request.Form("tags"),"<","&lt;"),">","&gt;"))
 dim authorID: authorID=Session("UserID")
 dim updateAT: updateAT=NOW()
 dim createAT: createAT=NOW()
 dim responseJson: set responseJson = jsObject()
 dim test: test=true
-if len(title)<4 then
+if len(title)<4 or instr(title,"script") then 
 	test = false
-	responseJson("Title") = "Title is too short"
-else if len(post)<12 then
+	responseJson("Title") = "Title is too short or invalid"
+else if len(post)<12 or instr(post,"script") then
 	test = false
-	responseJson("post") = "post is too short"
+	responseJson("post") = "Post is too short or invalid"
 end if
 if test=true then
 	dim conn: set conn = newConnection()
