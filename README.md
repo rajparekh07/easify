@@ -1,5 +1,4 @@
-This repository is a blog type cool website created using latest web technologies such as HTML5, JavaScript and Classic ASP.
-The main aim of this project was to achieve the functionalities of any blog using Classic ASP. Hence all the features of Classic ASP must be used during the implementation phase of this project.
+This repository is a blog type website created using web technologies such as HTML5, JavaScript and Classic ASP.
 
 Contributors:
 Raj Parekh: Design, Development.
